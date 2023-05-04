@@ -14,12 +14,17 @@
 .popup-content {
     background-color: #fff;
     padding: 4rem;
+    padding-top: 35px;
     width: 60%;
     border-radius: 10px;
     font-size: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
 }
 
@@ -63,7 +68,7 @@
 }
 
 
-.close-pop-up{
+.close-pop-up {
     position: absolute;
     right: 30px;
     top: 18px;
@@ -73,6 +78,6 @@
 }
 
 
-.close-pop-up:hover{
+.close-pop-up:hover {
     scale: 1.2;
 }

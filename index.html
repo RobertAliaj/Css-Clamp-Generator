@@ -10,70 +10,57 @@
     <link rel="icon" type="image/gif" href="favicon-32x32.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="info.css">
+    <script src="template.js"></script>
     <script src="script.js"></script>
+
 
 </head>
 
-<body>
+<body onload="init()">
+
+    <div id="startScreen" class="info-popup hidden">
+        <div class="popup-content">
+            <h2>What do you want to calculaete ?</h2>
+
+            <div class="options-container">
+                <button id="calculate-font-size" class="option-button" onclick="calculateFont()">Calculate
+                    Font-Size</button>
+                <button id="calculate-image-width" class="option-button" onclick="calculateImage()">Calculate
+                    Image-Width</button>
+            </div>
+        </div>
+    </div>
 
 
-    <img id="info-icon" src="die-info.png" onclick="openInfoPopUp()">
-    <span id="info-text">Click here to learn how this works!</span>
-
+    <div>
+        <img id="info-icon" src="die-info.png" onclick="openInfoPopUp()">
+        <span id="info-text">Click here to learn how this works!</span>
+    </div>
 
     <h1>Css-Clamp() - Generator</h1>
 
-
-    <div class="input-div">
-
-        <div class="main-parent">
-            <div class="input-parent">
-
-                <span> <b> Type your Minimum Width </b></span>
-                <input id="minWidth" type="number" placeholder="Min-Width in px">
-
-            </div>
-
-            <div class="input-parent">
-
-                <span> <b> Type your Maximum Width</b></span>
-                <input id="maxWidth" type="number" placeholder="Max-Width in px">
-
-            </div>
-
-        </div>
-
-        <div class="main-parent">
-            <div class="input-parent">
-
-                <span> <b> Type Your Minimum Font-Size</b></span>
-                <input id="minFontSize" type="number" placeholder="Min-Font-Size in px">
-
-            </div>
-
-            <div class="input-parent">
-                <span> <b> Type your Maximum Font-Size </b></span>
-                <input id="maxFontSize" type="number" placeholder="Max-Font-Size in px">
-            </div>
-        </div>
-
+    <div class="switch-container">
+        <span id="fontSizeSwitch" class="switch-option" onclick="calculateFont()">Font-Size</span>
+        <span id="imageWidthSwitch" class="switch-option" onclick="calculateImage()">Image-Width</span>
     </div>
+
+    <div class="input-div" id="input-div"></div>
+    
+    <button onclick="getYourResult()">Get Result</button>
+
+
     <div>
         <span>You don't know your screen Resolution? - Find it out here <a href="http://whatismyscreenresolution.net/"
                 target="_blank"> Screen Size</a></span>
     </div>
 
 
-    <button onclick="getYourResult()">Get your Result</button>
-
-
-    <div id="overlay" class="overlay hidden">
+    <div id="overlay-result" class="overlay-result hidden">
         <div class="popup">
-            <!-- <h2>Result</h2> -->
             <p class="instruction">Add this to your CSS code:</p>
-            <p id="resultText"></p>
+            <p id="resultText" class="result-text hidden"></p>
             <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
-            <button class="close-btn" onclick="closePopup()">Close</button>
+            <button class="close-btn" onclick="closePopUp()">Close</button>
         </div>
     </div>
 
@@ -81,7 +68,7 @@
     <div id="info-popup" class="info-popup hidden">
         <div class="popup-content">
 
-            <img class="close-pop-up" src="buchstabe-x.png" onclick="closeInfoPopUp()">
+            <img class="close-pop-up" src="buchstabe-x.png" onclick="closePopUp()">
             <h2>Dynamic Font Sizing with CSS Clamp: Responsive Text Tool for Seamless Typography in Web Design and
                 Development</h2>
             <p>The Font Size Calculator website is a useful tool that helps web designers and developers create
@@ -110,13 +97,15 @@
         </div>
     </div>
 
-    <div>
+
+    <div style="position: absolute; bottom: 10px;">
         <a href="https://www.flaticon.com/de/kostenlose-icons/die-info" title="die info Icons">Die info Icons erstellt
             von
             Freepik - Flaticon</a>
         <a href="https://www.flaticon.com/de/kostenlose-icons/buchstabe-x" title="buchstabe x Icons">Buchstabe x Icons
             erstellt von Rohim - Flaticon</a>
     </div>
+
 </body>
 
 </html>
