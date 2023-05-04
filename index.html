@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css - Clamp Generator</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="info.css">
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+
+
+    <img id="info-icon" src="die-info.png" onclick="openInfoPopUp()">
+    <span id="info-text">Click here to learn how this works!</span>
+
+
+    <h1>Css-Clump - Generator</h1>
+
+
+    <div class="input-div">
+
+        <div class="main-parent">
+            <div class="input-parent">
+
+                <span> <b> Type your Minimum Width </b></span>
+                <input id="minWidth" type="number" placeholder="Min-Width in px">
+
+            </div>
+
+            <div class="input-parent">
+
+                <span> <b> Type your Maximum Width</b></span>
+                <input id="maxWidth" type="number" placeholder="Max-Width in px">
+
+            </div>
+
+        </div>
+
+        <div class="main-parent">
+            <div class="input-parent">
+
+                <span> <b> Type Your Minimum Font-Size</b></span>
+                <input id="minFontSize" type="number" placeholder="Min-Font-Size in px">
+
+            </div>
+
+            <div class="input-parent">
+                <span> <b> Type your Maximum Font-Size </b></span>
+                <input id="maxFontSize" type="number" placeholder="Max-Font-Size in px">
+            </div>
+        </div>
+
+    </div>
+    <div>
+        <span>You don't know your screen Resolution? - Find it out here <a href="http://whatismyscreenresolution.net/"
+                target="_blank"> Screen Size</a></span>
+    </div>
+
+
+    <button onclick="getYourResult()">Get your Result</button>
+
+
+    <div id="overlay" class="overlay hidden">
+        <div class="popup">
+            <!-- <h2>Result</h2> -->
+            <p class="instruction">Add this to your CSS code:</p>
+            <p id="resultText"></p>
+            <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
+            <button class="close-btn" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+
+    <div id="info-popup" class="info-popup hidden">
+        <div class="popup-content">
+
+            <img class="close-pop-up" src="buchstabe-x.png" onclick="closeInfoPopUp()">
+            <h2>Dynamic Font Sizing with CSS Clamp: Responsive Text Tool for Seamless Typography in Web Design and
+                Development</h2>
+            <p>The Font Size Calculator website is a useful tool that helps web designers and developers create
+                responsive text for their projects. The tool utilizes the CSS function <b>clamp()</b> for font size,
+                enabling
+                dynamic adjustment of font size based on varying screen sizes. This ensures that the font size remains
+                easily readable on different devices, from mobile phones to desktop computers. <br>
+
+                <br>
+                How it works:
+
+                The user inputs four values: Minimum Width, Maximum Width, Minimum Font Size, and Maximum Font Size.
+                These values represent the desired screen widths and font sizes for the responsive design. The website
+                then calculates the necessary values for the <b>clamp()</b> function to enable smooth scaling of the
+                font size
+                based on screen widths.
+                <br>
+
+                <br>
+                For example, if you want to start with a responsive design that has a font size of 40px at a full screen
+                width of 1500px and reduces to a font size of 16px at a width of 320px, the tool <b> automatically
+                scales the font size between these values </b>, depending on the screen width. In this way, the font size
+                remains easily readable on various devices and adapts automatically to the respective screen size.
+            </p>
+        </div>
+    </div>
+
+    <div>
+        <a href="https://www.flaticon.com/de/kostenlose-icons/die-info" title="die info Icons">Die info Icons erstellt
+            von
+            Freepik - Flaticon</a>
+        <a href="https://www.flaticon.com/de/kostenlose-icons/buchstabe-x" title="buchstabe x Icons">Buchstabe x Icons
+            erstellt von Rohim - Flaticon</a>
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html {
+            font-size: 16px;
+        }
+    </style>
+
+</head>
+
+<body onload="clampBuilder(320, 1536, 2, 4)">
+
+
+
+    <span id="text"></span>
+
+
+    <script>
+
+
+        const text = document.getElementById('text');
+
+        function clampBuilder(minWidthPx, maxWidthPx, minFontSize, maxFontSize) {
+            const root = document.querySelector("html");
+            const pixelsPerRem = Number(getComputedStyle(root).fontSize.slice(0, -2));
+
+            const minWidth = minWidthPx / pixelsPerRem;
+            const maxWidth = maxWidthPx / pixelsPerRem;
+
+            const slope = (maxFontSize - minFontSize) / (maxWidth - minWidth);
+            const yAxisIntersection = -minWidth * slope + minFontSize
+
+            let clampFontSize = `clamp(${minFontSize}rem, ${yAxisIntersection}rem + ${slope * 100}vw, ${maxFontSize}rem)`;
+
+            text.innerHTML = 'Füge das deinem Css-Code hinzu:   ' + 'font-size: ' + clampFontSize + ';';
+
+            // return `clamp( ${minFontSize}rem, ${yAxisIntersection}rem + ${slope * 100}vw, ${maxFontSize}rem )`;
+        }
+
+    </script>
+
+</body>
+
+</html> -->
